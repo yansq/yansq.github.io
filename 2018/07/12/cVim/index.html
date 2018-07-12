@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="今天偶然间尝试了一下Vim，感觉到这一体系的潜力，但想要真正通过Vim提升编程效率，还有很长的一段路要走。 就在我浏览网络寻找安慰感的时候，发现chrome上也有诸多提供Vim操作方式的插件，试了一下以后发现，这是一个学习成本极低却又能显著提升效率的东西，十分适合在台式电脑上，或是笔记本外接键盘时使用（鼠标这个东西真的不友好~）。 这些插件的功能大同小异，这里就介绍一下我选用的cVim插件的一些按">
+<meta name="keywords" content="效率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim的轻量级使用--cVim">
+<meta property="og:url" content="http://yoursite.com/2018/07/12/cVim/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="今天偶然间尝试了一下Vim，感觉到这一体系的潜力，但想要真正通过Vim提升编程效率，还有很长的一段路要走。 就在我浏览网络寻找安慰感的时候，发现chrome上也有诸多提供Vim操作方式的插件，试了一下以后发现，这是一个学习成本极低却又能显著提升效率的东西，十分适合在台式电脑上，或是笔记本外接键盘时使用（鼠标这个东西真的不友好~）。 这些插件的功能大同小异，这里就介绍一下我选用的cVim插件的一些按">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-12T15:41:17.106Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vim的轻量级使用--cVim">
+<meta name="twitter:description" content="今天偶然间尝试了一下Vim，感觉到这一体系的潜力，但想要真正通过Vim提升编程效率，还有很长的一段路要走。 就在我浏览网络寻找安慰感的时候，发现chrome上也有诸多提供Vim操作方式的插件，试了一下以后发现，这是一个学习成本极低却又能显著提升效率的东西，十分适合在台式电脑上，或是笔记本外接键盘时使用（鼠标这个东西真的不友好~）。 这些插件的功能大同小异，这里就介绍一下我选用的cVim插件的一些按">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Vim的轻量级使用--cVim</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2018/07/08/scrum-in-daily-schedule/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/07/12/cVim/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/07/12/cVim/&text=Vim的轻量级使用--cVim"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/07/12/cVim/&is_video=false&description=Vim的轻量级使用--cVim"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vim的轻量级使用--cVim&body=Check out this article: http://yoursite.com/2018/07/12/cVim/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/07/12/cVim/&name=Vim的轻量级使用--cVim&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#网页滚动"><span class="toc-number">1.</span> <span class="toc-text">网页滚动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入"><span class="toc-number">2.</span> <span class="toc-text">输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选中"><span class="toc-number">3.</span> <span class="toc-text">选中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#点击"><span class="toc-number">4.</span> <span class="toc-text">点击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tab切换"><span class="toc-number">5.</span> <span class="toc-text">Tab切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器功能"><span class="toc-number">6.</span> <span class="toc-text">浏览器功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#链接操作及搜索"><span class="toc-number">7.</span> <span class="toc-text">链接操作及搜索</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Vim的轻量级使用--cVim
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-07-12T15:34:38.000Z" itemprop="datePublished">2018-07-12</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/效率/">效率</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>今天偶然间尝试了一下Vim，感觉到这一体系的潜力，但想要真正通过Vim提升编程效率，还有很长的一段路要走。</p>
+<p>就在我浏览网络寻找安慰感的时候，发现chrome上也有诸多提供Vim操作方式的插件，试了一下以后发现，这是一个学习成本极低却又能显著提升效率的东西，十分适合在台式电脑上，或是笔记本外接键盘时使用（鼠标这个东西真的不友好~）。</p>
+<p>这些插件的功能大同小异，这里就介绍一下我选用的cVim插件的一些按键方案.</p>
+<h4 id="网页滚动"><a href="#网页滚动" class="headerlink" title="网页滚动"></a>网页滚动</h4><ul>
+<li><code>j</code>：下滚；</li>
+<li><code>k</code>：上滚；</li>
+<li><code>h</code>：左滚；</li>
+<li><code>l</code>：右滚；</li>
+<li><code>e || u</code>：上滚半页 （应该是没区别~）</li>
+<li><code>d</code>：下滚半页</li>
+<li><code>gg</code>： 上滚到顶</li>
+<li><code>G</code>：下滚到底<br>和Vim的操作基本一样，就是滚半屏少了ctrl的组合键。<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4>使用<code>gi</code>便可切换到第一个输入栏，之后可以使用<code>Tab</code>键切换输入栏，使用<code>Esc</code>退出选中状态。<h4 id="选中"><a href="#选中" class="headerlink" title="选中"></a>选中</h4>按下<code>v</code>，进入可视化模式，使用hjkl四个方向键控制游标到起始位置，再按下<code>v</code>，控制游标选取需要选中的部分，之后就可以对选中部分进行各种操作，比如:</li>
+<li><code>y</code>：复制；</li>
+<li><code>p</code>：Google搜索<br>等等<h4 id="点击"><a href="#点击" class="headerlink" title="点击"></a>点击</h4>按下<code>f</code>之后，页面中所有的按钮或是链接旁就会显示快捷键，按下快捷键就可以打开对应的链接，输入小写是在当前页打开链接，大写则是在新标签页打开链接（可以是<code>f</code>的大小写，也可以是链接快捷键的大小写。）<br><code>q</code>的用法与<code>f</code>完全相同，只是<code>f</code>模拟click事件，<code>q</code>模拟hover事件。<br>如果要一次打开多个网页可以使用<code>mf</code>，我个人是几乎用不到这个功能。<h4 id="Tab切换"><a href="#Tab切换" class="headerlink" title="Tab切换"></a>Tab切换</h4>使用以下快捷键可以对浏览器ode标签进行操作：</li>
+<li><code>K</code>：下一个Tab；</li>
+<li><code>J</code>: 上一个Tab；</li>
+<li><code>x</code>：关闭当前Tab；</li>
+<li><code>X</code>：打开最近关闭的Tab；</li>
+<li><code>gp</code>：固定/取消固定；</li>
+<li><code>t</code>：新标签<br>（感觉这里略有些奇怪，因为讲道理k是上方向，j是下方向啊，但调过来更奇怪。。。）</li>
+</ul>
+<p>（gp就是RTS游戏的编队操作了，感觉专门留一个网页存好常用页面然后刷刷刷切换还是挺带感的，然并卵）</p>
+<h4 id="浏览器功能"><a href="#浏览器功能" class="headerlink" title="浏览器功能"></a>浏览器功能</h4><ul>
+<li><code>H</code>：后退；</li>
+<li><code>L</code>：前进；</li>
+<li><code>r</code>：刷新<h4 id="链接操作及搜索"><a href="#链接操作及搜索" class="headerlink" title="链接操作及搜索"></a>链接操作及搜索</h4></li>
+<li><code>gy + 快捷键</code>：复制指定链接地址；</li>
+<li><code>yy</code>：复制当前网址；</li>
+<li><code>a</code>：开新的Google；</li>
+<li><code>/</code>：搜索；</li>
+<li><code>b</code>：搜书签；</li>
+<li><code>l</code>：搜历史；</li>
+<li><code>:</code>：命令行</li>
+</ul>
+<p>还有一些其它的就不列举了，目前还有一个想知道的是怎么把光标定到地址栏并选中当前地址，似乎并没有这个的快捷键啊。</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#网页滚动"><span class="toc-number">1.</span> <span class="toc-text">网页滚动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#输入"><span class="toc-number">2.</span> <span class="toc-text">输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选中"><span class="toc-number">3.</span> <span class="toc-text">选中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#点击"><span class="toc-number">4.</span> <span class="toc-text">点击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tab切换"><span class="toc-number">5.</span> <span class="toc-text">Tab切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器功能"><span class="toc-number">6.</span> <span class="toc-text">浏览器功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#链接操作及搜索"><span class="toc-number">7.</span> <span class="toc-text">链接操作及搜索</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/07/12/cVim/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/07/12/cVim/&text=Vim的轻量级使用--cVim"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/07/12/cVim/&is_video=false&description=Vim的轻量级使用--cVim"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vim的轻量级使用--cVim&body=Check out this article: http://yoursite.com/2018/07/12/cVim/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/07/12/cVim/&title=Vim的轻量级使用--cVim"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/07/12/cVim/&name=Vim的轻量级使用--cVim&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
