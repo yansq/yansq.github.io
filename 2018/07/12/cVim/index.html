@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="今天偶然间尝试了一下Vim，感觉到这一体系的潜力，但想要真正通过Vim提升编程效率，还有很长的一段路要走。 就在我浏览网络寻找安慰感的时候，发现chrome上也有诸多提供Vim操作方式的插件，试了一下以后发现，这是一个学习成本极低却又能显著提升效率的东西，十分适合在台式电脑上，或是笔记本外接键盘时使用（鼠标这个东西真的不友好~）。 这些插件的功能大同小异，这里就介绍一下我选用的cVim插件的一些按">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-12T15:41:17.106Z">
+<meta property="og:updated_time" content="2018-07-12T15:50:25.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim的轻量级使用--cVim">
 <meta name="twitter:description" content="今天偶然间尝试了一下Vim，感觉到这一体系的潜力，但想要真正通过Vim提升编程效率，还有很长的一段路要走。 就在我浏览网络寻找安慰感的时候，发现chrome上也有诸多提供Vim操作方式的插件，试了一下以后发现，这是一个学习成本极低却又能显著提升效率的东西，十分适合在台式电脑上，或是笔记本外接键盘时使用（鼠标这个东西真的不友好~）。 这些插件的功能大同小异，这里就介绍一下我选用的cVim插件的一些按">
@@ -142,7 +142,7 @@
   <div class="content" itemprop="articleBody">
     <p>今天偶然间尝试了一下Vim，感觉到这一体系的潜力，但想要真正通过Vim提升编程效率，还有很长的一段路要走。</p>
 <p>就在我浏览网络寻找安慰感的时候，发现chrome上也有诸多提供Vim操作方式的插件，试了一下以后发现，这是一个学习成本极低却又能显著提升效率的东西，十分适合在台式电脑上，或是笔记本外接键盘时使用（鼠标这个东西真的不友好~）。</p>
-<p>这些插件的功能大同小异，这里就介绍一下我选用的cVim插件的一些按键方案.</p>
+<p>这些插件的功能大同小异，这里就介绍一下我选用的cVim插件的一些按键方案。</p>
 <h4 id="网页滚动"><a href="#网页滚动" class="headerlink" title="网页滚动"></a>网页滚动</h4><ul>
 <li><code>j</code>：下滚；</li>
 <li><code>k</code>：上滚；</li>
@@ -151,21 +151,38 @@
 <li><code>e || u</code>：上滚半页 （应该是没区别~）</li>
 <li><code>d</code>：下滚半页</li>
 <li><code>gg</code>： 上滚到顶</li>
-<li><code>G</code>：下滚到底<br>和Vim的操作基本一样，就是滚半屏少了ctrl的组合键。<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4>使用<code>gi</code>便可切换到第一个输入栏，之后可以使用<code>Tab</code>键切换输入栏，使用<code>Esc</code>退出选中状态。<h4 id="选中"><a href="#选中" class="headerlink" title="选中"></a>选中</h4>按下<code>v</code>，进入可视化模式，使用hjkl四个方向键控制游标到起始位置，再按下<code>v</code>，控制游标选取需要选中的部分，之后就可以对选中部分进行各种操作，比如:</li>
-<li><code>y</code>：复制；</li>
-<li><code>p</code>：Google搜索<br>等等<h4 id="点击"><a href="#点击" class="headerlink" title="点击"></a>点击</h4>按下<code>f</code>之后，页面中所有的按钮或是链接旁就会显示快捷键，按下快捷键就可以打开对应的链接，输入小写是在当前页打开链接，大写则是在新标签页打开链接（可以是<code>f</code>的大小写，也可以是链接快捷键的大小写。）<br><code>q</code>的用法与<code>f</code>完全相同，只是<code>f</code>模拟click事件，<code>q</code>模拟hover事件。<br>如果要一次打开多个网页可以使用<code>mf</code>，我个人是几乎用不到这个功能。<h4 id="Tab切换"><a href="#Tab切换" class="headerlink" title="Tab切换"></a>Tab切换</h4>使用以下快捷键可以对浏览器ode标签进行操作：</li>
-<li><code>K</code>：下一个Tab；</li>
-<li><code>J</code>: 上一个Tab；</li>
-<li><code>x</code>：关闭当前Tab；</li>
-<li><code>X</code>：打开最近关闭的Tab；</li>
-<li><code>gp</code>：固定/取消固定；</li>
-<li><code>t</code>：新标签<br>（感觉这里略有些奇怪，因为讲道理k是上方向，j是下方向啊，但调过来更奇怪。。。）</li>
+<li><code>G</code>：下滚到底<br>和Vim的操作基本一样，就是滚半屏少了ctrl的组合键。</li>
 </ul>
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>使用<code>gi</code>便可切换到第一个输入栏，之后可以使用<code>Tab</code>键切换输入栏，使用<code>Esc</code>退出选中状态。</p>
+<h4 id="选中"><a href="#选中" class="headerlink" title="选中"></a>选中</h4><p>按下<code>v</code>，进入可视化模式，使用hjkl四个方向键控制游标到起始位置，再按下<code>v</code>，控制游标选取需要选中的部分，之后就可以对选中部分进行各种操作，比如:</p>
+<ul>
+<li><code>y</code>：复制；</li>
+<li><code>p</code>：Google搜索<br>等等</li>
+</ul>
+<h4 id="点击"><a href="#点击" class="headerlink" title="点击"></a>点击</h4><p>按下<code>f</code>之后，页面中所有的按钮或是链接旁就会显示快捷键，按下快捷键就可以打开对应的链接，输入小写是在当前页打开链接，大写则是在新标签页打开链接（可以是<code>f</code>的大小写，也可以是链接快捷键的大小写）。<br><code>q</code>的用法与<code>f</code>完全相同，只是<code>f</code>模拟click事件，<code>q</code>模拟hover事件。<br>如果要一次打开多个网页可以使用<code>mf</code>，我个人是几乎用不到这个功能。</p>
+<h4 id="Tab切换"><a href="#Tab切换" class="headerlink" title="Tab切换"></a>Tab切换</h4><p>使用以下快捷键可以对浏览器ode标签进行操作：</p>
+<ul>
+<li><p><code>K</code>：下一个Tab；</p>
+</li>
+<li><p><code>J</code>: 上一个Tab；</p>
+</li>
+<li><p><code>x</code>：关闭当前Tab；</p>
+</li>
+<li><p><code>X</code>：打开最近关闭的Tab；</p>
+</li>
+<li><p><code>gp</code>：固定/取消固定；</p>
+</li>
+<li><p><code>t</code>：新标签</p>
+</li>
+</ul>
+<p>（感觉这里略有些奇怪，因为讲道理k是上方向，j是下方向啊，但调过来更奇怪。。。）</p>
 <p>（gp就是RTS游戏的编队操作了，感觉专门留一个网页存好常用页面然后刷刷刷切换还是挺带感的，然并卵）</p>
 <h4 id="浏览器功能"><a href="#浏览器功能" class="headerlink" title="浏览器功能"></a>浏览器功能</h4><ul>
 <li><code>H</code>：后退；</li>
 <li><code>L</code>：前进；</li>
-<li><code>r</code>：刷新<h4 id="链接操作及搜索"><a href="#链接操作及搜索" class="headerlink" title="链接操作及搜索"></a>链接操作及搜索</h4></li>
+<li><code>r</code>：刷新</li>
+</ul>
+<h4 id="链接操作及搜索"><a href="#链接操作及搜索" class="headerlink" title="链接操作及搜索"></a>链接操作及搜索</h4><ul>
 <li><code>gy + 快捷键</code>：复制指定链接地址；</li>
 <li><code>yy</code>：复制当前网址；</li>
 <li><code>a</code>：开新的Google；</li>
